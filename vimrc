@@ -111,6 +111,9 @@ noremap 0 ^
 " Toggle paste mode
 nnoremap <leader>pp :setlocal paste!<cr>
 
+" Open vimrc in new buffer
+nnoremap <leader>ev :n $MYVIMRC<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CTRLP [plugin]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
