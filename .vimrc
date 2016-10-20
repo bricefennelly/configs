@@ -103,7 +103,7 @@ cnoremap jk <esc>
 
 " help to unlearn using esc key
 inoremap <esc> <nop>
-cnoremap <esc> <nop>
+" cnoremap <esc> <nop>  (this breaks with remote connections)
 
 " 0 jumps to first non-blank character
 noremap 0 ^
