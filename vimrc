@@ -81,21 +81,21 @@ colorscheme mustang
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Faster command mode
-map ; :
+nnoremap ; :
 
 " Switch between buffers quickly
-map <C-n> :bprevious<cr>
-map <C-m> :bnext<cr>
+nnoremap <C-n> :bprevious<cr>
+nnoremap <C-m> :bnext<cr>
 
 " Still use j and k to move up and down when line-wrapping is happening
 onoremap j gj
 onoremap k gk
 
 " Fast saving
-map <space> :w!<cr>
+nnoremap <space> :w!<cr>
 
 " Disable highlight when <leader>n is pressed
-map <leader>n :noh<cr>
+nnoremap <leader>n :noh<cr>
 
 " Escape insert mode by pressing "jk"
 inoremap jk <esc>
@@ -109,7 +109,7 @@ inoremap <esc> <nop>
 noremap 0 ^
 
 " Toggle paste mode
-map <leader>pp :setlocal paste!<cr>
+nnoremap <leader>pp :setlocal paste!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CTRLP [plugin]
@@ -157,14 +157,14 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fugitive [plugin]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>c :Gcommit -m ""<left>
-map <leader>s :Gstatus<cr>
-map <leader><cr> :Git push origin master<cr>
+nnoremap <leader>c :Gcommit -m ""<left>
+nnoremap <leader>s :Gstatus<cr>
+nnoremap <leader><cr> :Git push origin master<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => BufExplorer [plugin]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>k :BufExplorer<cr>
+nnoremap <leader>k :BufExplorer<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-sneak [plugin]
