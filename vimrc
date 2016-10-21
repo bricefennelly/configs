@@ -114,6 +114,9 @@ nnoremap <leader>pp :setlocal paste!<cr>
 " Open vimrc in new buffer
 nnoremap <leader>ev :n $MYVIMRC<cr>
 
+" Source vimrc 
+nnoremap <leader>sv :so $MYVIMRC<cr>
+
 " Delete buffer
 nnoremap <leader>d :bd<cr>
 
