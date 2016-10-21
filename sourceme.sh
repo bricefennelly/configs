@@ -18,12 +18,12 @@ function create-session {
 
 function workon { 
   PROJECTNAME=$1
-  tmux attach-session -t $PROJECTNAME > /dev/null
+  tmux -2 attach-session -t $PROJECTNAME > /dev/null
   if [[ $? -ne 0 ]]; then
     echo "Session $PROJECTNAME does not exist; creating"
     create-session $PROJECTNAME
   else
-    tmux attach-session -t $PROJECTNAME
+    tmux -2 attach-session -t $PROJECTNAME
   fi
 }
 
