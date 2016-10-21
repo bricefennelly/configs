@@ -115,7 +115,7 @@ nnoremap <leader>pp :setlocal paste!<cr>
 nnoremap <leader>ev :n $MYVIMRC<cr>
 
 " Source vimrc 
-nnoremap <leader>sv :so $MYVIMRC<cr>
+nnoremap <leader>S :so $MYVIMRC<cr>
 
 " Delete buffer
 nnoremap <leader>d :bd<cr>
@@ -191,7 +191,7 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+" Delete trailing white space on save
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
