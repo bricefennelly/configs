@@ -2,6 +2,7 @@
 
 alias wo='tmux attach-session -t'
 alias s='git status'
+alias t='tmux ls'
 alias activate='source ./venv/bin/activate'
 
 function create-session {
