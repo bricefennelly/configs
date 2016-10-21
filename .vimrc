@@ -185,7 +185,7 @@ let g:sneak#s_next = 1
 " => Scripts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
