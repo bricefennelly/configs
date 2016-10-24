@@ -91,8 +91,8 @@ nnoremap <C-n> :bprevious<cr>
 nnoremap <C-m> :bnext<cr>
 
 " Still use j and k to move up and down when line-wrapping is happening
-onoremap j gj
-onoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 " Fast saving
 nnoremap <space> :w!<cr>
