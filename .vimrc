@@ -14,10 +14,10 @@ let mapleader = ","
 filetype plugin indent on
 
 " history, lines around cursor, command window height
-set hi=700 so=7 ch=2
+set history=700 scrolloff=7 cmdheight=2
 
 " Tabs, indentation and line wrapping
-set et sta sw=2 ts=2 ai si wrap
+set expandtab smarttab shiftwidth=2 tabstop=2 autoindent smartindent wrap
 
 " change cwd to current file's
 set autochdir
@@ -29,34 +29,34 @@ autocmd BufNewFile,BufRead *.py setlocal ts=4 sts=4 sw=4
 set autoread
 
 " No backup files
-set noswapfile nowb nobackup
+set noswapfile nowritebackup nobackup
 
 " Don't save options or cwd in session
 set ssop-=options ssop-=curdir ssop-=buffers
 
 " yank to system clipboard
 if has('unnamedplus')
-    set cb=unnamedplus
+    set clipboard=unnamedplus
 endif
 
 " timeouts for key codes and sequence key-bindings 
-set timeout ttimeout tm=400 ttm=10
+set timeout ttimeout timeoutlen=400 ttimeoutlen=10
 
 " Set utf8 as standard encoding, en_US the standard language, and unix filetype
-set enc=utf8 ffs=unix,dos,mac
+set encoding=utf8 fileformats=unix,dos,mac
 
 " wildmenu
 set wildmenu wildmode=longest,full wildignore=*.o,*~,*.pyc
 
 " Allow backspacing over newlines, indentation and the beginning of lines
-set bs=eol,start,indent
+set backspace=eol,start,indent
 
 " Always show the status line and tabline, hide buffer when abandoned
-set ls=2 stal=2 hid
+set laststatus=2 showtabline=2 hidden
 
 " Don't reopen already open buffers, even if in other tab. open new tab
 " for quickfix commands that display errors
-set swb=useopen,usetab,newtab
+set switchbuf=useopen,usetab,newtab
 
 " Ignore case unless case is specified, highlight results like a browser
 set ignorecase smartcase hlsearch incsearch
@@ -73,7 +73,7 @@ set noeb novb t_vb=
 " colorscheme settings
 syntax enable " Enable syntax highlighting
 set t_Co=256 t_ut= " Enable full color, tmux support
-set bg=dark cc=80 " Dark background with bar at 80 columns
+set bg=dark colorcolumn=80 " Dark background with bar at 80 columns
 colorscheme mustang
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
