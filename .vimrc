@@ -23,7 +23,10 @@ set expandtab smarttab shiftwidth=2 tabstop=2 autoindent smartindent wrap
 set autochdir
 
 " 4-space tabs for python
-autocmd BufNewFile,BufRead *.py setlocal ts=4 sts=4 sw=4
+augroup pythonspacing
+  autocmd!
+  autocmd BufNewFile,BufRead *.py setlocal ts=4 sts=4 sw=4
+augroup END
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -185,17 +188,23 @@ let g:sneak#s_next = 1
 " => Scripts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Return to last edit position when opening files
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+augroup returntopos
+  " Return to last edit position when opening files
+  autocmd!
+  autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal! g`\"" |
+       \ endif
+augroup END
 
-" Delete trailing white space on save
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+augroup deletetrailingws
+  " Delete trailing white space on save
+  func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+  endfunc
+  autocmd!
+  autocmd BufWrite *.py :call DeleteTrailingWS()
+  autocmd BufWrite *.coffee :call DeleteTrailingWS()
+augroup END
